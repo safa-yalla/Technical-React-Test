@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+.gym{
+	align-items: left;
+	justify-content: left;
+	padding: 20px;
+	margin-left: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.home{
+  display: inline-block;
+  height: 18vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 2.5rem;
+  background-color: #000;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+/* Navbar CSS */
+.navbar {
+  background-color: #bac1da;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.logo {
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+  color: #000;
+  align-items: center;
+  width: 100%;
+margin: auto;
+  display: flex;
+  justify-content: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.nav-menu {
+  background-color: #ffffff;
+  width: 150px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: #151414;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: #ffffff;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
+}
+.headline{
+	color: #000000;
+font-family: Times, serif;
+font-style: normal;
+font-weight: bold;
+margin-top: 0px;
+margin-bottom: 1px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+container {
+  margin-top: "28px";
+  margin-bottom: "8px";
+}
+.button_icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+ float:right;
+}
+.hero-section {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 40px;
+  color: #000;
+  border:#000
+
+}
+
+a {
+  text-decoration: none;
+  color:#202A44;
+}
+a:hover{
+	color: #1b3aaa;
+}
+.hero-section img {
+  max-width: 100%;
+}
+
+main {
+  padding: 20px;
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #000;
+text-align: justify;
+  text-justify: inter-word;
+}
+
+.main-content h2 {
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 10px;
+}
+p{
+	margin-bottom: 20px;
+}
+
+.single {
+padding: 2px 16px;
+background: #fff;
+display: block;
+margin: 20px 1px;
+border-left: 8px solid #202A44;
+}
+.single:hover{
+border-left: 8px solid #bac1da;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+.socials a:hover i{
+    color: aqua;
 }

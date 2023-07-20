@@ -1,17 +1,67 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Navbar from './comps/Navbar'
+import Footer from './comps/Footer'
+import {createRoot} from "react-dom/client"
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route, Link,
+  Outlet
+} from "react-router-dom";
+import "./App.css"
+import Classes from './pages/Classes';
+import Clients from './pages/Clients';
+import Home from './pages/Home';
+import DetailsClass from './pages/classId/[id]';
+import DetailsClient from './pages/clientId/[id]';
+import NotFound from './404';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const AppLayout = () => (
+		<>
+<Navbar/>
+<Outlet/>
+<ToastContainer />
+<Footer/>
+		</>
 );
+ 
+const router = createBrowserRouter([
+	{
+element: <AppLayout/>,
+children: [
+  {
+    path: "/",
+    element:<Home/>,
+  },
+  {
+	path: "classes/*",
+	element: <Classes/>,
+ 
+},
+  {
+    path: "clients", 
+    element: <Clients/>,
+	
+  },
+		{
+			path: "/classes/:id",
+			element:< DetailsClass/>,
+		},
+{
+			path: "/clients/:id",
+			element:< DetailsClient/>,
+		},
+{
+			path:'*',
+ 			element:<NotFound/>
+},
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+],
+},
+  ]);
+
+createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
