@@ -1,6 +1,9 @@
 import { useParams } from "react-router"
 import { useState, useEffect } from "react";
 import {Container} from '@mui/material';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../../App.css';
 
 const DetailsClass = () => {
 	const param = useParams()
@@ -16,6 +19,12 @@ const [classes, setClasses] = useState([])
 		setClasses(data)
 		console.log("dataClass", data)
 	})
+	.catch((error) => {
+    console.error("Error occurred during the request:", error);
+    toast.error('An error occurred.', {
+      position: toast.POSITION.TOP_CENTER
+    });
+	});
 }
 useEffect(() =>{
 	fetchClasses()
@@ -24,24 +33,40 @@ useEffect(() =>{
 	return ( 
 		<>
 		<Container>
+			<main>
 		<h1>{classes.title}</h1>
-		
+		<div style={{borderBelow:"black"}}></div>
+		</main>
+				<img style={{ width: 280, height: 350, float: "right", padding: '20px'}} src={"/man.jpg"}/>
+
 	 <body>
-		<main>
-	  <section class="main-content">
+		
+	  <section class="main-content1">
 		  <div className="single">
 
-      <h2>Coach</h2>
-      <p>{classes.coach_name}</p>
-	  </div>
-		  <div className="single">
-
-      <h2>Description</h2>
+      <h2>Course</h2>
       <p>{classes.description}</p>
 	  </div>
 
+	  <div className="single">
+
+      <h2>Coach: {classes.coach_name}</h2>
+      <p>{classes.coach_brief}</p>
+	  </div>
+
+<div className="single">
+
+      <h2>Price</h2>
+      <p>AED {classes.price}</p>
+	  </div>
+
+<div className="single">
+
+      <h2>Timing</h2>
+      <p>{classes.timing}</p>
+	  </div>
+
     </section>
-	  </main>
 	  	  </body>
 			</Container>
 		</>

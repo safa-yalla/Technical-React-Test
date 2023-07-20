@@ -24,6 +24,12 @@ const fetchClasses= () =>{
 		setClasses(data)
 		console.log("dataClass", data)
 	})
+	.catch((error) => {
+    console.error("Error occurred during the request:", error);
+    toast.error('An error occurred.', {
+      position: toast.POSITION.TOP_CENTER
+    });
+	});
 
 };
 useEffect(() =>{
@@ -63,6 +69,12 @@ useEffect(() =>{
     });
 	  handleCloseModal();
   })
+  .catch((error) => {
+    console.error("Error occurred during the PUT request:", error);
+    toast.error('An error occurred', {
+      position: toast.POSITION.TOP_CENTER
+    });
+	});
 
 }
 
@@ -83,10 +95,12 @@ return (
 			<div className="headline">
 	<h1>Classes</h1>
 	<div className="button_icon">
+		    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+
 	<IconButton  onClick={handleOpenModal}>
 		  <FaIcons.FaPlus/>
     </IconButton>
-			  
+			  </div>
 			  </div>
 </div>
 	{/*<IconButton onClick={handleOpenModal}>
@@ -139,7 +153,7 @@ return (
 	<Container>
 	<Grid container spacing ={3}>
     {classes.map((client) => (
-		<Grid item xs={12}md = {12}>
+		<Grid item xs={12}md = {3} lg={4}>
 		<ClassCard data={client} handleDelete = {handleDelete}/>
 		</Grid>
 	))}

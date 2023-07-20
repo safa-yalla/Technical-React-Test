@@ -1,24 +1,24 @@
-import * as FaIcons from "react-icons/fa";
+import * as MdIcons from "react-icons/md";
 import * as AiIcons from "react-icons/ai";
 import * as BsIcons from "react-icons/bs";
 
  export const SidebarData = [
 	 {
-		title: "Home",
+		title: "Home ",
 		path: "/",
-		icons: <AiIcons.AiFillHome/>,
+		icons: <AiIcons.AiFillHome color="black"/>,
 		cName: "nav-text"
 },
 {
-		title: "Classes",
+		title: "Classes ",
 		path: "/classes",
-		icons: <BsIcons.BsPersonFill/>,
+		icons: <MdIcons.MdClass color="black"/>,
 		cName: "nav-text"
 },
 {
-		title: "Client",
+		title: "Client ",
 		path: "/clients",
-		icons: <BsIcons.BsPersonFill/>,
+		icons: <BsIcons.BsPersonFill color="black"/>,
 		cName: "nav-text"
 },
 ]

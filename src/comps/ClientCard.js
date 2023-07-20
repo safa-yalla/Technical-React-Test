@@ -44,7 +44,12 @@ const ClientCard = ({data, handleDelete}) => {
       position: toast.POSITION.TOP_CENTER,
     });
 	  handleCloseModal();
-  })
+  }).catch((error) => {
+    console.error("Error occurred during the request:", error);
+    toast.error('An error occurred.', {
+      position: toast.POSITION.TOP_CENTER
+    });
+	});
   }
 	return ( 
 		<>

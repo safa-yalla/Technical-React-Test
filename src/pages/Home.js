@@ -7,9 +7,10 @@ const Home = () => {
 			<div className="gym">
       <h1>GYM-X </h1>
 	  </div>
+	  =		<main>
+
 	  <div>
 		  		  <body>
-=		<main>
 			<section class="hero-section">
 	  <div class="hero-content">
         <h1>Welcome to Our Website</h1>
@@ -25,10 +26,11 @@ const Home = () => {
       <h2>About Us</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod dolor vel volutpat posuere.</p>
     </section>
-	  </main>
 	  	  </body>
 
 	  </div>
+	  	  </main>
+
 	  </div>
 
 	 );

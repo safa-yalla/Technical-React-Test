@@ -9,13 +9,12 @@
 .gym{
 	align-items: left;
 	justify-content: left;
-	padding: 20px;
-	margin-left: 40px;
+	margin-left: 60px;
 }
 
 .home{
   display: inline-block;
-  height: 18vh;
+  height: 14vh;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
@@ -25,12 +24,12 @@
 
 /* Navbar CSS */
 .navbar {
-  background-color: #bac1da;
-  height: 80px;
+  background-color: #000;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
 }
 .logo {
   justify-content: space-around;
@@ -121,15 +120,14 @@ align-items: center;
 justify-content: center;
 }
 
-container {
-  margin-top: "28px";
-  margin-bottom: "8px";
-}
+
 .button_icon {
   width: 50px;
   height: 50px;
   display: flex;
  float:right;
+ flex-direction: row-reverse;
+    align-items: center;
 }
 .hero-section {
   text-align: center;
@@ -154,6 +152,7 @@ a:hover{
 
 main {
   padding: 20px;
+  margin-top: 20px ;
 }
 
 .main-content {
@@ -163,9 +162,16 @@ main {
 text-align: justify;
   text-justify: inter-word;
 }
+.main-content1 {
+  max-width: 800px;
+  margin: 0 80px;
+  color: #000;
+text-align: justify;
+  text-justify: inter-word;
+}
 
 .main-content h2 {
-  font-size: 24px;
+  font-size: 36px;
   color: #000;
   margin-bottom: 10px;
 }
@@ -177,7 +183,7 @@ p{
 padding: 2px 16px;
 background: #fff;
 display: block;
-margin: 20px 1px;
+margin: 10px 1px;
 border-left: 8px solid #202A44;
 }
 .single:hover{
@@ -208,3 +214,15 @@ border-left: 8px solid #bac1da;
 .socials a:hover i{
     color: aqua;
 }
+.footer {
+  background-color: rgb(85, 83, 83);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: 40px;
+  
+}
+.footer p {
+  margin-top: 5px;
+}
+

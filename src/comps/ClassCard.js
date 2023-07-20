@@ -46,6 +46,12 @@ console.log("classcard", data.title)
 	  console.log("Class edited")
 	  handleCloseModal();
   })
+  .catch((error) => {
+    console.error("Error occurred during the request:", error);
+    toast.error('An error occurred while editing the class.', {
+      position: toast.POSITION.TOP_CENTER
+    });
+	});
 
 }
 	return ( 
@@ -85,7 +91,7 @@ console.log("classcard", data.title)
 					</ListItem>
 
 					<ListItem sx={{display: 'list-item'}}>
-					Price: AED{data.price}
+					Price: AED {data.price}
 					</ListItem>
 
 				</Typography>
@@ -141,6 +147,18 @@ console.log("classcard", data.title)
 			  required 
 			  value = {price}
 			  onChange ={(e) => setPrice(e.target.value)}/>
+</li>
+ <li>
+              <label htmlFor="coach_brief">Coach Brief:</label>
+              <input type="text" id="coach_brief" name="coach_brief" 
+			  value = {coach_brief}
+			  onChange ={(e) => setCoachBrief(e.target.value)}/>
+</li>
+ <li>
+              <label htmlFor="description">Description:</label>
+              <input type="text" id="description" name="description" 
+			  value = {description}
+			  onChange ={(e) => setDescription(e.target.value)}/>
 </li>
               <button type="submit">Submit</button>
             </form>

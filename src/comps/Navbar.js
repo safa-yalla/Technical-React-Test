@@ -15,12 +15,12 @@ const showSidebar = () =>setSidebar(!sidebar);
 	return ( 
 		<>
 		
-		<IconContext.Provider value={{ color: "black"}}>
+		<IconContext.Provider value={{ color: "white"}}>
 			<div className="navbar">
 				<Link to ="#" className="menu-bars" >
 				<FaIcons.FaBars onClick={showSidebar}/>
 				</Link>
-			   <img style={{ width: 100, height: 100}} src="/dumbbell.png" alt="Logo" className="logo"/>
+			   <img style={{ width: 100, height: 100, padding:'10px'}} src="/dumbbell-modified.png" alt="Logo" className="logo"/>
 			   <img style={{ width: 60, height: 60}} src="/profile.png" alt="Logo"/>
 
 			</div>
@@ -28,7 +28,7 @@ const showSidebar = () =>setSidebar(!sidebar);
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>
               <Link to='#' className='menu-bars'>
-                <AiIcons.AiOutlineClose />
+                <AiIcons.AiOutlineClose color="black"/>
               </Link>
             </li>
 					{SidebarData.map((item, index)=>{

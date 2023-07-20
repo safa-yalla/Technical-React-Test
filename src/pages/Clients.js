@@ -23,7 +23,12 @@ const fetchClients= () =>{
 	.then(data => {
 		setClients(data)
 		console.log("data", data)
-	})
+	}).catch((error) => {
+    console.error("Error occurred during the request:", error);
+    toast.error('An error occurred.', {
+      position: toast.POSITION.TOP_CENTER
+    });
+	});
 
 };
 useEffect(() =>{
@@ -71,13 +76,18 @@ setClients(newClients)
     });
 	  handleCloseModal();
   })
-
+.catch((error) => {
+    console.error("Error occurred during the request:", error);
+    toast.error('An error occurred.', {
+      position: toast.POSITION.TOP_CENTER
+    });
+	});
 	}
 
 	return (
 		<>
 		<Container>
-			<div className="headline">			
+			<div className="headline">	
 	<h1>Clients</h1>
 	<div className="button_icon">
 	<IconButton  onClick={handleOpenModal}>
@@ -144,14 +154,12 @@ setClients(newClients)
 	<Container>
 	<Grid container spacing ={3}>
     {clients.map((client) => (
-		<Grid item xs={12}md = {12}>
+		<Grid item xs={12}md = {3} lg={4}>
 		<ClientCard data={client} handleDelete = {handleDelete}/>
 		</Grid>
 	))}
 </Grid>
 </Container>
-	      
-
 </Container>
 		</>
 	 );
